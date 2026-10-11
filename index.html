@@ -30,21 +30,28 @@
   </section>
 
   <!-- ТЕОРИЯ -->
-  <section class="card">
-    <h2>📺 Теория</h2>
-    <p>Посмотрите видеофрагмент по теме занятия:</p>
-    <div class="video-wrap">
-      <!-- Замени ссылку на конкретный урок РЭШ или ИнтернетУрок -->
-      <iframe src="https://resh.edu.ru/subject/lesson/7316/main/255134/"
-              title="Видеоурок по компьютерной графике"
-              allowfullscreen></iframe>
-    </div>
-    <p class="hint">
-      Дополнительно: 
-      <a href="https://interneturok.ru/" target="_blank" rel="noopener">ИнтернетУрок</a> · 
-      <a href="https://resh.edu.ru/subject/" target="_blank" rel="noopener">РЭШ</a>
-    </p>
-  </section>
+<section class="card">
+  <h2>📺 Теория</h2>
+  <p>Выберите платформу и посмотрите видеофрагмент по теме занятия:</p>
+
+  <div class="link-grid">
+    <a class="link-card" href="https://resh.edu.ru/subject/19/" target="_blank" rel="noopener">
+      <span class="link-ico">🎬</span>
+      <span class="link-title">Российская электронная школа</span>
+      <span class="link-desc">Информатика · раздел 7 класса</span>
+    </a>
+    <a class="link-card" href="https://interneturok.ru/subject/informatika" target="_blank" rel="noopener">
+      <span class="link-ico">🎥</span>
+      <span class="link-title">ИнтернетУрок</span>
+      <span class="link-desc">Видеоуроки по информатике</span>
+    </a>
+  </div>
+
+  <p class="hint">
+    Открой ссылку → найди тему «Компьютерная графика» → посмотри видео.
+    Если у тебя есть прямая ссылка на конкретный урок — вставь её вместо адреса раздела.
+  </p>
+</section>
 
   <!-- СРАВНЕНИЕ -->
   <section class="card">
@@ -104,27 +111,31 @@
   </section>
 
   <!-- РЕФЛЕКСИЯ -->
-  <section class="card">
-    <h2>💭 Рефлексия</h2>
-    <p>Ответь на вопросы:</p>
-    <!-- Замени action на ссылку своей Google-формы -->
-    <form action="https://docs.google.com/forms/d/e/ВАШ_ID/formResponse" method="POST" target="_blank" class="reflect">
-      <label>Что нового ты узнал на занятии?
-        <textarea name="entry.1" rows="3" required></textarea>
-      </label>
-      <label>Что было самым сложным?
-        <textarea name="entry.2" rows="2"></textarea>
-      </label>
-      <label>Оцени свою работу:
-        <select name="entry.3">
-          <option>Отлично</option>
-          <option>Хорошо</option>
-          <option>Нужно повторить</option>
-        </select>
-      </label>
-      <button type="submit" class="btn">Отправить</button>
-    </form>
-  </section>
+<section class="card">
+  <h2>💭 Рефлексия</h2>
+  <p>Ответь на вопросы. После нажатия кнопки ответы сохранятся в файл на твоём компьютере.</p>
+
+  <div class="reflect">
+    <label>Что нового ты узнал на занятии?
+      <textarea id="r1" rows="3" placeholder="Например: узнал, что векторная графика хранится в виде формул..."></textarea>
+    </label>
+
+    <label>Что было самым сложным?
+      <textarea id="r2" rows="2" placeholder="Например: понять разницу между форматами..."></textarea>
+    </label>
+
+    <label>Оцени свою работу на уроке:
+      <select id="r3">
+        <option>Отлично</option>
+        <option>Хорошо</option>
+        <option>Нужно повторить</option>
+      </select>
+    </label>
+
+    <button id="saveReflect" class="btn" type="button">💾 Сохранить ответы</button>
+    <p id="reflectMsg" class="result"></p>
+  </div>
+</section>
 
 </main>
 
