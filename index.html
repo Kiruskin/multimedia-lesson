@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Компьютерная графика: растровая и векторная | 7 класс</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <p class="tag">Информатика · 7 класс · Базовый уровень</p>
+    <h1>Компьютерная графика: растровая и векторная</h1>
+    <p class="subtitle">Интерактивное мультимедийное занятие</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ЦЕЛИ -->
+  <section class="card">
+    <h2>🎯 Цель и задачи</h2>
+    <p><strong>Цель:</strong> сформировать представление о растровой и векторной графике, её свойствах, форматах и областях применения.</p>
+    <ul>
+      <li>Познакомиться с понятиями «пиксель», «векторный объект».</li>
+      <li>Научиться сравнивать растровые и векторные изображения.</li>
+      <li>Научиться определять тип графики по изображению и формату файла.</li>
+    </ul>
+  </section>
+
+  <!-- ТЕОРИЯ -->
+  <section class="card">
+    <h2>📺 Теория</h2>
+    <p>Посмотрите видеофрагмент по теме занятия:</p>
+    <div class="video-wrap">
+      <!-- Замени ссылку на конкретный урок РЭШ или ИнтернетУрок -->
+      <iframe src="https://resh.edu.ru/subject/lesson/7316/main/255134/"
+              title="Видеоурок по компьютерной графике"
+              allowfullscreen></iframe>
+    </div>
+    <p class="hint">
+      Дополнительно: 
+      <a href="https://interneturok.ru/" target="_blank" rel="noopener">ИнтернетУрок</a> · 
+      <a href="https://resh.edu.ru/subject/" target="_blank" rel="noopener">РЭШ</a>
+    </p>
+  </section>
+
+  <!-- СРАВНЕНИЕ -->
+  <section class="card">
+    <h2>📊 Сравнение растровой и векторной графики</h2>
+    <table class="compare">
+      <thead>
+        <tr><th>Критерий</th><th>Растровая</th><th>Векторная</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Элемент изображения</td><td>Пиксель</td><td>Векторный объект</td></tr>
+        <tr><td>Масштабирование</td><td>Теряет качество</td><td>Без потери качества</td></tr>
+        <tr><td>Объём файла</td><td>Большой</td><td>Небольшой</td></tr>
+        <tr><td>Форматы</td><td>JPEG, PNG, GIF, BMP</td><td>SVG, AI, CDR, WMF</td></tr>
+        <tr><td>Программы</td><td>Photoshop, GIMP, Paint</td><td>CorelDRAW, Illustrator, Inkscape</td></tr>
+        <tr><td>Примеры</td><td>Фотографии, сканы</td><td>Логотипы, схемы, чертежи</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ИНТЕЛЛЕКТ-КАРТА -->
+  <section class="card">
+    <h2>🧠 Интеллект-карта</h2>
+    <p>Схема ключевых понятий занятия:</p>
+    <pre class="mindmap">
+Компьютерная графика
+├── Растровая
+│   ├── Пиксель
+│   ├── Форматы: JPEG, PNG, GIF, BMP
+│   ├── Редакторы: Photoshop, GIMP, Paint
+│   └── Применение: фото, сканы, веб
+└── Векторная
+    ├── Векторный объект (контур + заливка)
+    ├── Форматы: SVG, AI, CDR, WMF
+    ├── Редакторы: CorelDRAW, Illustrator, Inkscape
+    └── Применение: логотипы, схемы, чертежи
+    </pre>
+  </section>
+
+  <!-- ПРАКТИКА -->
+  <section class="card">
+    <h2>✏️ Практика: определи тип графики</h2>
+    <p>Выбери правильный ответ для каждого случая.</p>
+    <form id="quiz" class="quiz"></form>
+    <button id="checkBtn" class="btn">Проверить</button>
+    <p id="result" class="result"></p>
+  </section>
+
+  <!-- ДОПОЛНИТЕЛЬНЫЕ РЕСУРСЫ -->
+  <section class="card">
+    <h2>🔗 Дополнительные тренировки на платформах</h2>
+    <ul class="links">
+      <li><a href="https://www.yaklass.ru/" target="_blank" rel="noopener">ЯКласс — задания по теме</a></li>
+      <li><a href="https://uchi.ru/" target="_blank" rel="noopener">Учи.ру — карточки</a></li>
+      <li><a href="https://education.yandex.ru/" target="_blank" rel="noopener">Яндекс.Учебник</a></li>
+      <li><a href="https://edu.skysmart.ru/homework/new" target="_blank" rel="noopener">SkySmart — интерактивные упражнения</a></li>
+    </ul>
+  </section>
+
+  <!-- РЕФЛЕКСИЯ -->
+  <section class="card">
+    <h2>💭 Рефлексия</h2>
+    <p>Ответь на вопросы:</p>
+    <!-- Замени action на ссылку своей Google-формы -->
+    <form action="https://docs.google.com/forms/d/e/ВАШ_ID/formResponse" method="POST" target="_blank" class="reflect">
+      <label>Что нового ты узнал на занятии?
+        <textarea name="entry.1" rows="3" required></textarea>
+      </label>
+      <label>Что было самым сложным?
+        <textarea name="entry.2" rows="2"></textarea>
+      </label>
+      <label>Оцени свою работу:
+        <select name="entry.3">
+          <option>Отлично</option>
+          <option>Хорошо</option>
+          <option>Нужно повторить</option>
+        </select>
+      </label>
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>Мультимедийное занятие · Информатика · 7 класс</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
