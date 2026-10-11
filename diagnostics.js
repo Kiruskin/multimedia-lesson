@@ -3,51 +3,40 @@ const saveBtn = document.getElementById("saveDiag");
 const msg = document.getElementById("diagMsg");
 
 // Правильные ответы для автопроверки
-const answers = {
-  q1: null,
-  q2: "jpeg",
-  q3: ["coreldraw", "illustrator", "inkscape"],
-  q4: null,
-  q5: null,
-  q6: null,
-  q7: null,
-  q8: null,
-  q9: null
-};
+const CORRECT_Q6 = "jpeg";
+const CORRECT_Q7 = ["coreldraw", "illustrator", "inkscape"];
 
 function getRadio(name) {
   const el = document.querySelector(`input[name="${name}"]:checked`);
   return el ? el.value : "";
 }
 
-function getCheckbox(name) {
+function getCheckboxes(name) {
   return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
     .map(el => el.value);
 }
 
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
-    // Проверка: заполнены ли ключевые поля
-    if (!getRadio("q1") || !getRadio("q2")) {
+    // Проверка минимальной заполненности
+    if (!getRadio("q1") || !document.getElementById("q2").value) {
       msg.className = "result err";
-      msg.textContent = "Ответь хотя бы на вопросы 1 и 2.";
+      msg.textContent = "Заполни хотя бы вопросы 1 и 2.";
       return;
     }
 
-    // Проверка правильности ответов 2 и 3
-    const q2 = getRadio("q2");
-    const q3 = getCheckbox("q3");
+    // Автопроверка тестовых вопросов
+    const q6 = getRadio("q6");
+    const q7 = getCheckboxes("q7");
 
-    const q2correct = q2 === answers.q2;
+    const q6correct = q6 === CORRECT_Q6;
+    const q7correct =
+      q7.length === CORRECT_Q7.length &&
+      q7.every(v => CORRECT_Q7.includes(v));
 
-    const q3correct =
-      q3.length === answers.q3.length &&
-      q3.every(v => answers.q3.includes(v));
-
-    // Итоговый балл (0–2)
     let score = 0;
-    if (q2correct) score++;
-    if (q3correct) score++;
+    if (q6correct) score++;
+    if (q7correct) score++;
 
     const date = new Date().toLocaleString("ru-RU");
 
@@ -58,31 +47,26 @@ if (saveBtn) {
   Дата: ${date}
 ====================================================
 
-1. Класс: ${getRadio("q1") || "—"}
+1. Класс:                          ${getRadio("q1") || "—"}
+2. Возраст (полных лет):           ${document.getElementById("q2").value || "—"}
+3. Частота работы с графикой:      ${document.getElementById("q3").value || "—"}
+4. Желание учиться в редакторе:    ${getRadio("q4") || "—"}
+5. Интерес к теме (1–5):           ${getRadio("q5") || "—"}
 
-2. Формат растровой графики (вопрос с одним ответом):
-   Ответ ученика: ${q2 || "—"}
-   Правильный:    jpeg
-   Результат:     ${q2correct ? "✅ верно" : "❌ неверно"}
+6. Формат растровой графики:
+   Ответ ученика:                  ${q6 || "—"}
+   Правильный ответ:               jpeg
+   Результат:                      ${q6correct ? "✅ верно" : "❌ неверно"}
 
-3. Программы векторной графики (множественный выбор):
-   Ответ ученика: ${q3.join(", ") || "—"}
-   Правильный:    coreldraw, illustrator, inkscape
-   Результат:     ${q3correct ? "✅ верно" : "❌ неверно"}
+7. Программы векторной графики:
+   Ответ ученика:                  ${q7.join(", ") || "—"}
+   Правильный ответ:               coreldraw, illustrator, inkscape
+   Результат:                      ${q7correct ? "✅ верно" : "❌ неверно"}
 
-4. Частота работы с графикой на уроках: ${document.getElementById("q4").value || "—"}
+8. Формат для логотипов и схем:    ${document.getElementById("q8").value.trim() || "—"}
 
-5. Интерес к теме (1–5): ${getRadio("q5") || "—"}
-
-6. Желание учиться работать в редакторе: ${getRadio("q6") || "—"}
-
-7. Пример векторной графики в жизни:
-   ${document.getElementById("q7").value.trim() || "—"}
-
-8. Что было сложным:
-   ${document.getElementById("q8").value.trim() || "—"}
-
-9. Оценка занятия: ${getRadio("q9") || "—"}
+9. Пример векторной графики в жизни:
+   ${document.getElementById("q9").value.trim() || "—"}
 
 ----------------------------------------------------
 ИТОГ ПО ТЕСТОВОЙ ЧАСТИ: ${score} из 2 правильных ответов.
@@ -101,6 +85,7 @@ if (saveBtn) {
 
     msg.className = "result ok";
     msg.textContent =
-      `✅ Ответы сохранены. Тестовая часть: ${score} из 2. Файл diagnostics-result.txt скачан.`;
+      `✅ Ответы сохранены. Тестовая часть: ${score} из 2. ` +
+      `Файл diagnostics-result.txt скачан.`;
   });
 }
