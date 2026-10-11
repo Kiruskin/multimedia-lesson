@@ -69,150 +69,6 @@ body {
 
 .card ul { padding-left: 20px; }
 
-.video-wrap {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  margin: 12px 0;
-  background: #000;
-}
-
-.video-wrap iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.hint { color: var(--muted); font-size: 14px; }
-
-.compare {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  font-size: 15px;
-}
-
-.compare th,
-.compare td {
-  border: 1px solid var(--border);
-  padding: 10px 12px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.compare th {
-  background: #eef1fb;
-  color: var(--primary-dark);
-}
-
-.compare tr:nth-child(even) td { background: #fafbff; }
-
-.mindmap {
-  background: #0f172a;
-  color: #c7d2fe;
-  padding: 18px;
-  border-radius: 10px;
-  overflow-x: auto;
-  font-size: 14px;
-  line-height: 1.5;
-  font-family: "JetBrains Mono", Consolas, monospace;
-}
-
-.quiz .q {
-  margin-bottom: 16px;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #fafbff;
-}
-
-.quiz .q p { margin: 0 0 8px; font-weight: 600; }
-
-.quiz label {
-  display: block;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.quiz label:hover { background: #eef1fb; }
-
-.quiz input { margin-right: 8px; }
-
-.btn {
-  background: var(--primary);
-  color: #fff;
-  border: 0;
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
-.btn:hover { background: var(--primary-dark); }
-
-.result {
-  font-weight: 700;
-  margin-top: 14px;
-  font-size: 16px;
-}
-
-.result.ok { color: var(--ok); }
-.result.err { color: var(--err); }
-
-.q.correct { border-color: var(--ok); background: #f0fdf4; }
-.q.wrong { border-color: var(--err); background: #fef2f2; }
-
-.links { list-style: none; padding: 0; }
-
-.links li { margin: 6px 0; }
-
-.links a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.links a:hover { text-decoration: underline; }
-
-.reflect label {
-  display: block;
-  margin-bottom: 14px;
-  font-weight: 500;
-}
-
-.reflect textarea,
-.reflect select {
-  width: 100%;
-  padding: 8px 10px;
-  margin-top: 6px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font: inherit;
-  background: #fafbff;
-}
-
-.footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 20px 0 40px;
-  font-size: 14px;
-}
-
-@media (max-width: 600px) {
-  .hero h1 { font-size: 24px; }
-  .card { padding: 18px; }
-  .compare { font-size: 13px; }
-  .compare th, .compare td { padding: 8px; }
-}
-
 /* === Карточки-ссылки на платформы === */
 .link-grid {
   display: grid;
@@ -241,37 +97,115 @@ body {
 }
 
 .link-ico { font-size: 22px; }
+.link-title { font-weight: 700; color: var(--primary-dark); }
+.link-desc { font-size: 13px; color: var(--muted); }
 
-.link-title {
-  font-weight: 700;
+.hint { color: var(--muted); font-size: 14px; }
+
+/* === Таблица сравнения === */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.compare th,
+.compare td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare th {
+  background: #eef1fb;
   color: var(--primary-dark);
 }
 
-.link-desc {
-  font-size: 13px;
-  color: var(--muted);
+.compare tr:nth-child(even) td { background: #fafbff; }
+
+/* === Интеллект-карта === */
+.mindmap {
+  background: #0f172a;
+  color: #c7d2fe;
+  padding: 18px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "JetBrains Mono", Consolas, monospace;
 }
 
-
-/* === Анкета === */
-.quiz.scale {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.quiz.scale label {
-  flex: 1 1 60px;
-  text-align: center;
+/* === Квиз === */
+.quiz .q {
+  margin-bottom: 16px;
+  padding: 12px 14px;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px 4px;
-  font-weight: 700;
+  border-radius: 10px;
   background: #fafbff;
 }
 
-.quiz.scale label:hover {
-  border-color: var(--primary);
+.quiz .q p { margin: 0 0 8px; font-weight: 600; }
+
+.quiz label {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.quiz label:hover { background: #eef1fb; }
+.quiz input { margin-right: 8px; }
+
+.q.correct { border-color: var(--ok); background: #f0fdf4; }
+.q.wrong { border-color: var(--err); background: #fef2f2; }
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover { background: var(--primary-dark); }
+
+.result { font-weight: 700; margin-top: 14px; font-size: 16px; }
+.result.ok { color: var(--ok); }
+.result.err { color: var(--err); }
+
+/* === Ссылки === */
+.links { list-style: none; padding: 0; }
+.links li { margin: 6px 0; }
+.links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.links a:hover { text-decoration: underline; }
+
+/* === Рефлексия === */
+.reflect label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.reflect textarea,
+.reflect select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fafbff;
 }
 
 textarea {
@@ -293,7 +227,6 @@ select {
   background: #fafbff;
 }
 
-
 /* === Пояснительная записка === */
 .about-summary {
   cursor: pointer;
@@ -313,15 +246,12 @@ select {
   transition: transform 0.2s;
 }
 
-details[open] .about-summary::before {
-  content: "▾ ";
-}
+details[open] .about-summary::before { content: "▾ "; }
 
 .about-body {
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--border);
-  color: var(--text);
   line-height: 1.65;
 }
 
@@ -332,14 +262,26 @@ details[open] .about-summary::before {
 }
 
 .about-body ul,
-.about-body ol {
-  padding-left: 22px;
-  margin: 6px 0;
-}
+.about-body ol { padding-left: 22px; margin: 6px 0; }
 
 .about-body code {
   background: #eef1fb;
   padding: 1px 6px;
   border-radius: 4px;
   font-size: 13px;
+}
+
+/* === Подвал === */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px 0 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 24px; }
+  .card { padding: 18px; }
+  .compare { font-size: 13px; }
+  .compare th, .compare td { padding: 8px; }
 }
