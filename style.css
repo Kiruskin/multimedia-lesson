@@ -292,3 +292,54 @@ select {
   font: inherit;
   background: #fafbff;
 }
+
+
+/* === Пояснительная записка === */
+.about-summary {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  padding: 6px 0;
+  list-style: none;
+  user-select: none;
+}
+
+.about-summary::-webkit-details-marker { display: none; }
+
+.about-summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+details[open] .about-summary::before {
+  content: "▾ ";
+}
+
+.about-body {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.about-body h3 {
+  margin: 18px 0 6px;
+  font-size: 16px;
+  color: var(--primary-dark);
+}
+
+.about-body ul,
+.about-body ol {
+  padding-left: 22px;
+  margin: 6px 0;
+}
+
+.about-body code {
+  background: #eef1fb;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
