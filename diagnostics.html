@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Диагностика по теме «Компьютерная графика»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <p class="tag">Диагностический материал · 7 класс</p>
+    <h1>Диагностика по теме «Компьютерная графика»</h1>
+    <p class="subtitle">Анкета-тест для констатирующего этапа</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ШАПКА -->
+  <section class="card">
+    <h2>👋 Дорогой ученик!</h2>
+    <p>
+      Эта анкета поможет понять, как ты разбираешься в компьютерной графике
+      и что тебе интересно. Отвечай честно — правильных и неправильных
+      ответов здесь нет, важно твоё мнение.
+    </p>
+    <ul>
+      <li><strong>Время:</strong> 10–12 минут</li>
+      <li><strong>Анонимность:</strong> имя указывать не нужно</li>
+      <li><strong>Вопросов:</strong> 9</li>
+      <li><strong>Автор:</strong> учитель информатики</li>
+    </ul>
+  </section>
+
+  <!-- ВОПРОС 1 -->
+  <section class="card">
+    <h2>1. Ты учишься в классе:</h2>
+    <div class="quiz" id="q1">
+      <label><input type="radio" name="q1" value="7"> 7 класс</label>
+      <label><input type="radio" name="q1" value="8"> 8 класс</label>
+      <label><input type="radio" name="q1" value="9"> 9 класс</label>
+      <label><input type="radio" name="q1" value="other"> Другой</label>
+    </div>
+  </section>
+
+  <!-- ВОПРОС 2 -->
+  <section class="card">
+    <h2>2. Какой формат относится к растровой графике?</h2>
+    <div class="quiz" id="q2">
+      <label><input type="radio" name="q2" value="svg"> SVG</label>
+      <label><input type="radio" name="q2" value="jpeg" data-correct="true"> JPEG</label>
+      <label><input type="radio" name="q2" value="cdr"> CDR</label>
+      <label><input type="radio" name="q2" value="ai"> AI</label>
+    </div>
+    <p class="hint">Подсказка: вспомни, какой формат используют для фотографий.</p>
+  </section>
+
+  <!-- ВОПРОС 3 -->
+  <section class="card">
+    <h2>3. Выбери все программы для векторной графики:</h2>
+    <div class="quiz" id="q3">
+      <label><input type="checkbox" name="q3" value="coreldraw" data-correct="true"> CorelDRAW</label>
+      <label><input type="checkbox" name="q3" value="photoshop"> Photoshop</label>
+      <label><input type="checkbox" name="q3" value="illustrator" data-correct="true"> Illustrator</label>
+      <label><input type="checkbox" name="q3" value="inkscape" data-correct="true"> Inkscape</label>
+      <label><input type="checkbox" name="q3" value="paint"> Paint</label>
+    </div>
+  </section>
+
+  <!-- ВОПРОС 4 -->
+  <section class="card">
+    <h2>4. Как часто ты работаешь с графикой на уроках информатики?</h2>
+    <div class="quiz">
+      <select id="q4">
+        <option value="">— выбери вариант —</option>
+        <option value="often">Часто</option>
+        <option value="sometimes">Иногда</option>
+        <option value="rarely">Редко</option>
+        <option value="never">Никогда</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- ВОПРОС 5 -->
+  <section class="card">
+    <h2>5. Насколько тебе интересна тема компьютерной графики?</h2>
+    <p class="hint">Оцени по шкале от 1 до 5, где 1 — совсем не интересно, 5 — очень интересно.</p>
+    <div class="quiz scale" id="q5">
+      <label><input type="radio" name="q5" value="1"> 1</label>
+      <label><input type="radio" name="q5" value="2"> 2</label>
+      <label><input type="radio" name="q5" value="3"> 3</label>
+      <label><input type="radio" name="q5" value="4"> 4</label>
+      <label><input type="radio" name="q5" value="5"> 5</label>
+    </div>
+  </section>
+
+  <!-- ВОПРОС 6 -->
+  <section class="card">
+    <h2>6. Хотел бы ты научиться работать в графическом редакторе?</h2>
+    <div class="quiz" id="q6">
+      <label><input type="radio" name="q6" value="yes"> Да</label>
+      <label><input type="radio" name="q6" value="no"> Нет</label>
+      <label><input type="radio" name="q6" value="maybe"> Не уверен</label>
+    </div>
+  </section>
+
+  <!-- ВОПРОС 7 -->
+  <section class="card">
+    <h2>7. Приведи пример, где в жизни встречается векторная графика:</h2>
+    <textarea id="q7" rows="3" placeholder="Например: логотипы, дорожные знаки, схемы метро..."></textarea>
+  </section>
+
+  <!-- ВОПРОС 8 -->
+  <section class="card">
+    <h2>8. Что для тебя было самым сложным в теме «Компьютерная графика»?</h2>
+    <textarea id="q8" rows="3" placeholder="Напиши своими словами..."></textarea>
+  </section>
+
+  <!-- ВОПРОС 9 -->
+  <section class="card">
+    <h2>9. Оцени занятие по шкале:</h2>
+    <div class="quiz" id="q9">
+      <label><input type="radio" name="q9" value="5"> Отлично</label>
+      <label><input type="radio" name="q9" value="4"> Хорошо</label>
+      <label><input type="radio" name="q9" value="3"> Нормально</label>
+      <label><input type="radio" name="q9" value="2"> Скучно</label>
+      <label><input type="radio" name="q9" value="1"> Не понравилось</label>
+    </div>
+  </section>
+
+  <!-- КНОПКА -->
+  <section class="card">
+    <button id="saveDiag" class="btn">💾 Сохранить ответы</button>
+    <p id="diagMsg" class="result"></p>
+  </section>
+
+</main>
+
+  <!-- ПОЯСНИТЕЛЬНАЯ ЗАПИСКА (свёрнута по умолчанию) -->
+  <section class="card">
+    <details>
+      <summary class="about-summary">📋 Пояснительная записка к диагностическому материалу</summary>
+
+      <div class="about-body">
+
+        <h3>Целевое назначение</h3>
+        <p>
+          Выявление уровня знаний и отношения учащихся 7 класса к теме
+          «Компьютерная графика» на констатирующем этапе педагогического исследования.
+        </p>
+
+        <h3>Решаемые задачи</h3>
+        <ol>
+          <li>Определить уровень предметных знаний по теме (вопросы 2–3).</li>
+          <li>Выявить отношение школьников к теме и мотивацию (вопросы 5–6, 9).</li>
+          <li>Собрать качественные данные о трудностях (вопросы 7–8).</li>
+          <li>Получить сведения об аудитории (вопросы 1, 4).</li>
+        </ol>
+
+        <h3>Структура</h3>
+        <ul>
+          <li>9 вопросов разных типов: один вариант, множественный выбор,
+              выпадающий список, шкала, короткий и длинный открытый ответ.</li>
+          <li>2 вопроса — тестовые (с автопроверкой).</li>
+          <li>7 вопросов — анкетные (без правильных ответов).</li>
+        </ul>
+
+        <h3>Особенности</h3>
+        <ul>
+          <li>Работает офлайн, без регистрации и сторонних сервисов.</li>
+          <li>Мультимедийное оформление: адаптивная вёрстка, интерактивные элементы.</li>
+          <li>Результат сохраняется в файл <code>diagnostics-result.txt</code>.</li>
+          <li>Анонимность: имя и персональные данные не собираются.</li>
+        </ul>
+
+        <h3>Рекомендации по использованию</h3>
+        <ul>
+          <li>Проводить в начале изучения темы (констатирующий этап).</li>
+          <li>Время прохождения: 10–12 минут.</li>
+          <li>Можно использовать на уроке, дома или как часть входного контроля.</li>
+          <li>Результаты удобно анализировать в Excel / Google Таблицах
+              после переноса из скачанного файла.</li>
+        </ul>
+
+        <h3>Техническая реализация</h3>
+        <p>
+          HTML + CSS + JavaScript. Размещено на GitHub Pages
+          в составе сайта-портфолио.
+        </p>
+
+      </div>
+    </details>
+  </section>
+
+<footer class="footer">
+  <div class="container">
+    <p>Диагностический материал · Информатика · 7 класс</p>
+  </div>
+</footer>
+
+<script src="diagnostics.js"></script>
+</body>
+</html>
