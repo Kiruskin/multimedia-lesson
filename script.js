@@ -88,3 +88,42 @@ checkBtn.addEventListener("click", () => {
   resultEl.className = "result " + (score === questions.length ? "ok" : "err");
   resultEl.textContent = `Правильных ответов: ${score} из ${questions.length} (${percent}%).`;
 });
+
+// === Сохранение рефлексии в .txt ===
+const saveBtn = document.getElementById("saveReflect");
+const reflectMsg = document.getElementById("reflectMsg");
+
+if (saveBtn) {
+  saveBtn.addEventListener("click", () => {
+    const a1 = document.getElementById("r1").value.trim();
+    const a2 = document.getElementById("r2").value.trim();
+    const a3 = document.getElementById("r3").value;
+
+    if (!a1) {
+      reflectMsg.className = "result err";
+      reflectMsg.textContent = "Заполни хотя бы первый вопрос.";
+      return;
+    }
+
+    const date = new Date().toLocaleString("ru-RU");
+    const content =
+      `Рефлексия по занятию «Компьютерная графика»\n` +
+      `Дата: ${date}\n\n` +
+      `1. Что нового узнал:\n${a1}\n\n` +
+      `2. Что было сложным:\n${a2 || "—"}\n\n` +
+      `3. Самооценка: ${a3}\n`;
+
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "reflection.txt";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    reflectMsg.className = "result ok";
+    reflectMsg.textContent = "✅ Файл reflection.txt сохранён. Отправь его учителю.";
+  });
+}
