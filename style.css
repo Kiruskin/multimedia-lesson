@@ -212,3 +212,42 @@ body {
   .compare { font-size: 13px; }
   .compare th, .compare td { padding: 8px; }
 }
+
+/* === Карточки-ссылки на платформы === */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fafbff;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74, 99, 231, 0.15);
+  border-color: var(--primary);
+}
+
+.link-ico { font-size: 22px; }
+
+.link-title {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.link-desc {
+  font-size: 13px;
+  color: var(--muted);
+}
