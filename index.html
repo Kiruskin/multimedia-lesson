@@ -30,28 +30,27 @@
   </section>
 
   <!-- ТЕОРИЯ -->
-<section class="card">
-  <h2>📺 Теория</h2>
-  <p>Выберите платформу и посмотрите видеофрагмент по теме занятия:</p>
+  <section class="card">
+    <h2>📺 Теория</h2>
+    <p>Выбери платформу и посмотри видеофрагмент по теме занятия:</p>
 
-  <div class="link-grid">
-    <a class="link-card" href="https://resh.edu.ru/subject/19/" target="_blank" rel="noopener">
-      <span class="link-ico">🎬</span>
-      <span class="link-title">Российская электронная школа</span>
-      <span class="link-desc">Информатика · раздел 7 класса</span>
-    </a>
-    <a class="link-card" href="https://interneturok.ru/subject/informatika" target="_blank" rel="noopener">
-      <span class="link-ico">🎥</span>
-      <span class="link-title">ИнтернетУрок</span>
-      <span class="link-desc">Видеоуроки по информатике</span>
-    </a>
-  </div>
+    <div class="link-grid">
+      <a class="link-card" href="https://resh.edu.ru/subject/19/" target="_blank" rel="noopener">
+        <span class="link-ico">🎬</span>
+        <span class="link-title">Российская электронная школа</span>
+        <span class="link-desc">Информатика · раздел 7 класса</span>
+      </a>
+      <a class="link-card" href="https://interneturok.ru/subject/informatika" target="_blank" rel="noopener">
+        <span class="link-ico">🎥</span>
+        <span class="link-title">ИнтернетУрок</span>
+        <span class="link-desc">Видеоуроки по информатике</span>
+      </a>
+    </div>
 
-  <p class="hint">
-    Открой ссылку → найди тему «Компьютерная графика» → посмотри видео.
-    Если у тебя есть прямая ссылка на конкретный урок — вставь её вместо адреса раздела.
-  </p>
-</section>
+    <p class="hint">
+      Открой ссылку → найди тему «Компьютерная графика» → посмотри видео.
+    </p>
+  </section>
 
   <!-- СРАВНЕНИЕ -->
   <section class="card">
@@ -92,16 +91,16 @@
 
   <!-- ПРАКТИКА -->
   <section class="card">
-    <h2>✏️ Практика: определи тип графики</h2>
-    <p>Выбери правильный ответ для каждого случая.</p>
+    <h2>✏️ Практика: проверь себя</h2>
+    <p>Ответь на 5 вопросов и нажми «Проверить».</p>
     <form id="quiz" class="quiz"></form>
-    <button id="checkBtn" class="btn">Проверить</button>
+    <button id="checkBtn" class="btn" type="button">Проверить</button>
     <p id="result" class="result"></p>
   </section>
 
   <!-- ДОПОЛНИТЕЛЬНЫЕ РЕСУРСЫ -->
   <section class="card">
-    <h2>🔗 Дополнительные тренировки на платформах</h2>
+    <h2>🔗 Дополнительные тренировки</h2>
     <ul class="links">
       <li><a href="https://www.yaklass.ru/" target="_blank" rel="noopener">ЯКласс — задания по теме</a></li>
       <li><a href="https://uchi.ru/" target="_blank" rel="noopener">Учи.ру — карточки</a></li>
@@ -111,31 +110,90 @@
   </section>
 
   <!-- РЕФЛЕКСИЯ -->
-<section class="card">
-  <h2>💭 Рефлексия</h2>
-  <p>Ответь на вопросы. После нажатия кнопки ответы сохранятся в файл на твоём компьютере.</p>
+  <section class="card">
+    <h2>💭 Рефлексия</h2>
+    <p>Ответь на вопросы. После нажатия кнопки ответы сохранятся в файл.</p>
 
-  <div class="reflect">
-    <label>Что нового ты узнал на занятии?
-      <textarea id="r1" rows="3" placeholder="Например: узнал, что векторная графика хранится в виде формул..."></textarea>
-    </label>
+    <div class="reflect">
+      <label>Что нового ты узнал на занятии?
+        <textarea id="r1" rows="3" placeholder="Например: узнал, что векторная графика хранится в виде формул..."></textarea>
+      </label>
 
-    <label>Что было самым сложным?
-      <textarea id="r2" rows="2" placeholder="Например: понять разницу между форматами..."></textarea>
-    </label>
+      <label>Что было самым сложным?
+        <textarea id="r2" rows="2" placeholder="Например: понять разницу между форматами..."></textarea>
+      </label>
 
-    <label>Оцени свою работу на уроке:
-      <select id="r3">
-        <option>Отлично</option>
-        <option>Хорошо</option>
-        <option>Нужно повторить</option>
-      </select>
-    </label>
+      <label>Оцени свою работу на уроке:
+        <select id="r3">
+          <option>Отлично</option>
+          <option>Хорошо</option>
+          <option>Нужно повторить</option>
+        </select>
+      </label>
 
-    <button id="saveReflect" class="btn" type="button">💾 Сохранить ответы</button>
-    <p id="reflectMsg" class="result"></p>
-  </div>
-</section>
+      <button id="saveReflect" class="btn" type="button">💾 Сохранить ответы</button>
+      <p id="reflectMsg" class="result"></p>
+    </div>
+  </section>
+
+  <!-- ПОЯСНИТЕЛЬНАЯ ЗАПИСКА -->
+  <section class="card">
+    <details>
+      <summary class="about-summary">📋 Пояснительная записка к занятию</summary>
+      <div class="about-body">
+
+        <h3>Тема и аудитория</h3>
+        <p>«Компьютерная графика: растровая и векторная графика». Информатика, 7 класс, базовый уровень.</p>
+
+        <h3>Цель занятия</h3>
+        <p>Сформировать у учащихся представление о растровой и векторной графике, её свойствах, форматах и областях применения.</p>
+
+        <h3>Задачи</h3>
+        <ol>
+          <li>Познакомить с понятиями «пиксель», «векторный объект».</li>
+          <li>Научить сравнивать растровые и векторные изображения.</li>
+          <li>Развивать навыки работы с интерактивными заданиями и ЦОР.</li>
+        </ol>
+
+        <h3>Планируемые результаты</h3>
+        <ul>
+          <li><strong>Предметные:</strong> объясняют различия растровой и векторной графики, приводят примеры.</li>
+          <li><strong>Метапредметные:</strong> работают по инструкции, анализируют цифровые ресурсы.</li>
+          <li><strong>Личностные:</strong> проявляют интерес к цифровым технологиям.</li>
+        </ul>
+
+        <h3>Используемые ЦОР</h3>
+        <ul>
+          <li>РЭШ — resh.edu.ru</li>
+          <li>ИнтернетУрок — interneturok.ru</li>
+          <li>ЯКласс — yaklass.ru</li>
+          <li>Учи.ру — uchi.ru</li>
+          <li>Яндекс.Учебник — education.yandex.ru</li>
+          <li>SkySmart — edu.skysmart.ru</li>
+        </ul>
+
+        <h3>Место мультимедиа в занятии</h3>
+        <p>Мультимедиа используются на всех этапах: мотивация, объяснение, закрепление, практика, контроль и рефлексия. Формы работы: видеофрагмент, интерактивные упражнения, онлайн-тест, интеллект-карта.</p>
+
+        <h3>План-конспект</h3>
+        <table class="compare">
+          <thead>
+            <tr><th>Этап</th><th>Время</th><th>Мультимедиа</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Мотивация</td><td>3 мин</td><td>Демонстрация изображений</td></tr>
+            <tr><td>Актуализация</td><td>5 мин</td><td>Слайд / страница занятия</td></tr>
+            <tr><td>Теория</td><td>12 мин</td><td>РЭШ / ИнтернетУрок</td></tr>
+            <tr><td>Первичное закрепление</td><td>7 мин</td><td>ЯКласс / Учи.ру</td></tr>
+            <tr><td>Практика</td><td>10 мин</td><td>HTML-квиз, интеллект-карта</td></tr>
+            <tr><td>Контроль</td><td>5 мин</td><td>SkySmart</td></tr>
+            <tr><td>Рефлексия</td><td>3 мин</td><td>Встроенная форма</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </details>
+  </section>
 
 </main>
 
