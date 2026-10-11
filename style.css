@@ -251,3 +251,44 @@ body {
   font-size: 13px;
   color: var(--muted);
 }
+
+
+/* === Анкета === */
+.quiz.scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quiz.scale label {
+  flex: 1 1 60px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 4px;
+  font-weight: 700;
+  background: #fafbff;
+}
+
+.quiz.scale label:hover {
+  border-color: var(--primary);
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fafbff;
+  resize: vertical;
+}
+
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fafbff;
+}
