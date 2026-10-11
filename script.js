@@ -1,4 +1,4 @@
-// Вопросы квиза. Правильный ответ — индекс в массиве options (0-based).
+// === КВИЗ ===
 const questions = [
   {
     q: "Что является минимальным элементом растрового изображения?",
@@ -41,55 +41,57 @@ const form = document.getElementById("quiz");
 const resultEl = document.getElementById("result");
 const checkBtn = document.getElementById("checkBtn");
 
-// Рендер вопросов
-questions.forEach((item, i) => {
-  const div = document.createElement("div");
-  div.className = "q";
-  div.dataset.index = i;
-  div.innerHTML = `
-    <p>${i + 1}. ${item.q}</p>
-    ${item.options.map((opt, j) => `
-      <label>
-        <input type="radio" name="q${i}" value="${j}">
-        ${opt}
-      </label>
-    `).join("")}
-  `;
-  form.appendChild(div);
-});
-
-// Проверка
-checkBtn.addEventListener("click", () => {
-  let score = 0;
-  let answered = 0;
-
+if (form) {
   questions.forEach((item, i) => {
-    const block = form.querySelector(`.q[data-index="${i}"]`);
-    block.classList.remove("correct", "wrong");
-    const selected = form.querySelector(`input[name="q${i}"]:checked`);
-    if (selected) {
-      answered++;
-      if (Number(selected.value) === item.correct) {
-        score++;
-        block.classList.add("correct");
-      } else {
-        block.classList.add("wrong");
-      }
-    }
+    const div = document.createElement("div");
+    div.className = "q";
+    div.dataset.index = i;
+    div.innerHTML = `
+      <p>${i + 1}. ${item.q}</p>
+      ${item.options.map((opt, j) => `
+        <label>
+          <input type="radio" name="q${i}" value="${j}">
+          ${opt}
+        </label>
+      `).join("")}
+    `;
+    form.appendChild(div);
   });
+}
 
-  if (answered < questions.length) {
-    resultEl.className = "result err";
-    resultEl.textContent = `Ответь на все вопросы (отвечено ${answered} из ${questions.length}).`;
-    return;
-  }
+if (checkBtn) {
+  checkBtn.addEventListener("click", () => {
+    let score = 0;
+    let answered = 0;
 
-  const percent = Math.round((score / questions.length) * 100);
-  resultEl.className = "result " + (score === questions.length ? "ok" : "err");
-  resultEl.textContent = `Правильных ответов: ${score} из ${questions.length} (${percent}%).`;
-});
+    questions.forEach((item, i) => {
+      const block = form.querySelector(`.q[data-index="${i}"]`);
+      block.classList.remove("correct", "wrong");
+      const selected = form.querySelector(`input[name="q${i}"]:checked`);
+      if (selected) {
+        answered++;
+        if (Number(selected.value) === item.correct) {
+          score++;
+          block.classList.add("correct");
+        } else {
+          block.classList.add("wrong");
+        }
+      }
+    });
 
-// === Сохранение рефлексии в .txt ===
+    if (answered < questions.length) {
+      resultEl.className = "result err";
+      resultEl.textContent = `Ответь на все вопросы (отвечено ${answered} из ${questions.length}).`;
+      return;
+    }
+
+    const percent = Math.round((score / questions.length) * 100);
+    resultEl.className = "result " + (score === questions.length ? "ok" : "err");
+    resultEl.textContent = `Правильных ответов: ${score} из ${questions.length} (${percent}%).`;
+  });
+}
+
+// === РЕФЛЕКСИЯ ===
 const saveBtn = document.getElementById("saveReflect");
 const reflectMsg = document.getElementById("reflectMsg");
 
